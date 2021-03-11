@@ -1,0 +1,36 @@
+@import './antd.scss';
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #999;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+body {
+  font-family: consolas, monaco, 'microsoft yahei';
+  font-size: 12px;
+}
+body,
+h1,
+pre {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button,
+input,
+pre,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+pre {
+  line-height: 16px;
+}
