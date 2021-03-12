@@ -1,7 +1,7 @@
-import Layout from './layout/index.js';
+import MainLayout from './layout';
 
 function App() {
-  return <Layout></Layout>;
+  return <MainLayout></MainLayout>;
 }
 
 export default App;

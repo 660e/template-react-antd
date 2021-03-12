@@ -1,14 +1,17 @@
-import './index.scss';
+import styles from './index.module.scss';
+import { Layout } from 'antd';
 
-const message = 'Lorem ipsum dolor sit amet.';
+const { Sider, Content } = Layout;
 
-function Layout() {
+function MainLayout() {
   return (
-    <div className="layout">
-      <h1>layout</h1>
-      <p>{message}</p>
-    </div>
+    <Layout className={styles['ant-layout']}>
+      <Layout>
+        <Sider>Sider</Sider>
+        <Content>Content</Content>
+      </Layout>
+    </Layout>
   );
 }
 
-export default Layout;
+export default MainLayout;
