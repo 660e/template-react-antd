@@ -2,14 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
-import Api from '../views/demo/api.jsx';
-import Chart from '../views/demo/chart.jsx';
+import ApiComponent from '../views/demo/api.jsx';
+import ChartComponent from '../views/demo/chart.jsx';
+import ModalComponent from '../views/demo/modal.jsx';
 
 import styles from './index.module.scss';
 
 const { Sider, Content } = Layout;
 
-export default class MainLayout extends React.Component {
+export default class LayoutComponent extends React.Component {
   render() {
     return (
       <Layout className={styles['ant-layout']}>
@@ -22,12 +23,16 @@ export default class MainLayout extends React.Component {
               <Menu.Item className={styles['ant-menu-item']} key="2">
                 <Link to="/chart">chart</Link>
               </Menu.Item>
+              <Menu.Item className={styles['ant-menu-item']} key="3">
+                <Link to="/modal">modal</Link>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Content className={styles['ant-layout-content']}>
             <Switch>
-              <Route path="/api" component={Api} exact></Route>
-              <Route path="/chart" component={Chart} exact></Route>
+              <Route path="/api" component={ApiComponent} exact />
+              <Route path="/chart" component={ChartComponent} exact />
+              <Route path="/modal" component={ModalComponent} exact />
             </Switch>
           </Content>
         </Router>

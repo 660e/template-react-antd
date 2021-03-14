@@ -1,7 +1,7 @@
 import React from 'react';
 import demoApi from '../../api/demo.js';
 
-export default class Api extends React.Component {
+export default class ApiComponent extends React.Component {
   constructor() {
     super();
     this.state = {

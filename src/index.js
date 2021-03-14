@@ -16,9 +16,4 @@ import './styles/index.scss';
 echarts.use([PieChart, LegendComponent, TooltipComponent, CanvasRenderer]);
 window.$echarts = echarts;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

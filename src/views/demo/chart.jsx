@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Chart extends React.Component {
+export default class ChartComponent extends React.Component {
   constructor() {
     super();
     this.state = {
