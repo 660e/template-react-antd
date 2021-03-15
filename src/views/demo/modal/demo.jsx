@@ -1,40 +1,55 @@
-import React from 'react';
-import { Modal } from 'antd';
+import { Component } from 'react';
+import { Button, Input, Modal } from 'antd';
 
-export default class DemoModal extends React.Component {
+class DemoModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalVisible: false
+      value: ''
     };
-    // console.log(props);
+    if (props.onRef) {
+      props.onRef(this);
+    }
   }
 
-  componentDidMount() {
-    // console.log('componentDidMount');
-  }
+  // componentDidMount() {
+  //   console.log('componentDidMount');
+  // }
 
-  //
+  // componentDidUpdate() {
+  //   if (this.props.visible) {
+  //     console.log(this.props.params);
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount');
+  // }
+
+  ok = () => {
+    this.props.onOk({ b: this.state.value });
+  };
+
+  cancel = () => {
+    this.props.onCancel();
+  };
+
+  onChange = e => {
+    this.setState({ value: e.target.value });
+  };
+
+  open = params => {
+    console.log(params);
+  };
 
   render() {
-    const isModalVisible = this.props.abc;
-    // const ok = this.props.ok;
-    // console.log(isModalVisible);
     return (
-      <Modal title="弹窗" width="300px" visible={isModalVisible} onOk={this.ok} onCancel={this.cancel}>
-        <p>Lorem ipsum dolor sit amet.</p>
+      <Modal title="对话框" width="300px" visible={this.props.visible} onOk={this.ok} onCancel={this.cancel}>
+        <Input value={this.state.value} onChange={this.onChange} />
+        <Button onClick={this.test}>test</Button>
       </Modal>
     );
   }
-
-  cancel = () => {
-    this.setState({ isModalVisible: false });
-  };
-
-  ok = () => {
-    this.props.ok();
-    // this.cancel();
-    console.log(123);
-    // this.$emit('confirm', { b: this.input });
-  };
 }
+
+export default DemoModal;
