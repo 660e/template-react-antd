@@ -1,9 +1,9 @@
-import request from '../utils/request.js';
+import { service } from '../utils/service.js';
 import mockjs from 'mockjs';
 
 const demoApi = {
   getRandomuserData(results, page, seed) {
-    return request.get('https://randomuser.me/api/', {
+    return service.get('https://randomuser.me/api/', {
       params: { results, page, seed }
     });
   },
@@ -31,7 +31,7 @@ const demoApi = {
     return new Promise(resolve => resolve(response));
   },
   getMockData2() {
-    return request.get('/demo');
+    return service.get('/demo');
   }
 };
 

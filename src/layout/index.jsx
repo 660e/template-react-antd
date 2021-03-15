@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 
 const { Sider, Content } = Layout;
 
-export default class LayoutComponent extends React.Component {
+class LayoutComponent extends Component {
   render() {
     return (
       <Layout className={styles['ant-layout']}>
@@ -40,3 +40,5 @@ export default class LayoutComponent extends React.Component {
     );
   }
 }
+
+export default LayoutComponent;
