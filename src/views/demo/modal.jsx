@@ -1,47 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button } from 'antd';
 import DemoModal from './modal/demo.jsx';
 
-export default class ModalComponent extends React.Component {
+class ModalComponent extends Component {
   constructor() {
     super();
-    this.state = {
-      isModalVisible: false,
-      modalParams: ''
-    };
+    this.demoModal = React.createRef();
   }
 
   showModal = () => {
-    // this.setState({ isModalVisible: true, modalParams: { a: 1 } });
-    if (this.ChildPage) {
-      this.ChildPage.open({ a: 1 }); //调用子组件的dream方法
-    }
+    this.demoModal.current.show({ a: 1 });
   };
 
-  handleOk = params => {
-    this.setState({ isModalVisible: false });
-    console.log(params);
-  };
-
-  handleCancel = () => {
-    this.setState({ isModalVisible: false });
+  onConfirm = resolve => {
+    console.log(resolve);
   };
 
   render() {
     return (
       <div>
         <Button onClick={this.showModal}>打开对话框</Button>
-        <DemoModal
-          onRef={c => (this.ChildPage = c)}
-          visible={this.state.isModalVisible}
-          params={this.state.modalParams}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        />
+        <DemoModal ref={this.demoModal} confirm={this.onConfirm} />
       </div>
     );
   }
 }
 
-// https://zh-hans.reactjs.org/docs/refs-and-the-dom.html#callback-refs
-// https://zh-hans.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper
+export default ModalComponent;
