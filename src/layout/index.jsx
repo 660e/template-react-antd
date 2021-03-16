@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 
 import ApiComponent from '../views/demo/api.jsx';
 import ChartComponent from '../views/demo/chart.jsx';
+import FiltersComponent from '../views/demo/filters.jsx';
 import ModalComponent from '../views/demo/modal.jsx';
 
 import styles from './index.module.scss';
@@ -17,13 +18,16 @@ class LayoutComponent extends Component {
         <Router>
           <Sider>
             <Menu className={styles['ant-menu-vertical']} theme="dark">
-              <Menu.Item className={styles['ant-menu-item']} key="1">
+              <Menu.Item className={styles['ant-menu-item']} key="api">
                 <Link to="/api">api</Link>
               </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="2">
+              <Menu.Item className={styles['ant-menu-item']} key="chart">
                 <Link to="/chart">chart</Link>
               </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="3">
+              <Menu.Item className={styles['ant-menu-item']} key="filters">
+                <Link to="/filters">filters</Link>
+              </Menu.Item>
+              <Menu.Item className={styles['ant-menu-item']} key="modal">
                 <Link to="/modal">modal</Link>
               </Menu.Item>
             </Menu>
@@ -32,6 +36,7 @@ class LayoutComponent extends Component {
             <Switch>
               <Route path="/api" component={ApiComponent} exact />
               <Route path="/chart" component={ChartComponent} exact />
+              <Route path="/filters" component={FiltersComponent} exact />
               <Route path="/modal" component={ModalComponent} exact />
             </Switch>
           </Content>
