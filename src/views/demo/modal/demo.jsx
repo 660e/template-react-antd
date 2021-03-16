@@ -42,7 +42,7 @@ class DemoModal extends Component {
 
   render() {
     return (
-      <Modal title="对话框" width="300px" visible={this.state.isModalVisible} onOk={this.ok} onCancel={this.cancel}>
+      <Modal title="Modal" width="300px" visible={this.state.isModalVisible} onOk={this.ok} onCancel={this.cancel}>
         <Input value={this.state.input} onChange={this.onChange} />
       </Modal>
     );
