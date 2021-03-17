@@ -9,7 +9,11 @@ class FiltersComponent extends Component {
     };
   }
   render() {
-    return <h1>{toThousandFilter(this.state.n)}</h1>;
+    return (
+      <h1>
+        {this.state.n} -> {toThousandFilter(this.state.n)}
+      </h1>
+    );
   }
 }
 

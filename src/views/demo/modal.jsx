@@ -19,7 +19,9 @@ class ModalComponent extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.showModal}>Show Modal</Button>
+        <Button type="primary" onClick={this.showModal}>
+          Show Modal
+        </Button>
         <DemoModal ref={this.demoModal} confirm={this.onConfirm} />
       </div>
     );
