@@ -6,6 +6,7 @@ import ApiComponent from '../views/demo/api.jsx';
 import ChartComponent from '../views/demo/chart.jsx';
 import FiltersComponent from '../views/demo/filters.jsx';
 import FormComponent from '../views/demo/form.jsx';
+import MockComponent from '../views/demo/mock.jsx';
 import ModalComponent from '../views/demo/modal.jsx';
 
 import styles from './index.module.scss';
@@ -31,6 +32,9 @@ class LayoutComponent extends Component {
               <Menu.Item className={styles['ant-menu-item']} key="form">
                 <Link to="/form">form</Link>
               </Menu.Item>
+              <Menu.Item className={styles['ant-menu-item']} key="mock">
+                <Link to="/mock">mock</Link>
+              </Menu.Item>
               <Menu.Item className={styles['ant-menu-item']} key="modal">
                 <Link to="/modal">modal</Link>
               </Menu.Item>
@@ -42,6 +46,7 @@ class LayoutComponent extends Component {
               <Route path="/chart" component={ChartComponent} exact />
               <Route path="/filters" component={FiltersComponent} exact />
               <Route path="/form" component={FormComponent} exact />
+              <Route path="/mock" component={MockComponent} exact />
               <Route path="/modal" component={ModalComponent} exact />
             </Switch>
           </Content>
