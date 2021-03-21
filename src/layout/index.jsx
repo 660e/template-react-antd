@@ -1,17 +1,12 @@
-import { Component } from 'react';
+import { Component, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-
-import ApiComponent from '../views/demo/api.jsx';
-import ChartComponent from '../views/demo/chart.jsx';
-import FiltersComponent from '../views/demo/filters.jsx';
-import FormComponent from '../views/demo/form.jsx';
-import MockComponent from '../views/demo/mock.jsx';
-import ModalComponent from '../views/demo/modal.jsx';
+import { constantRoutes } from '../router';
 
 import styles from './index.module.scss';
 
 const { Sider, Content } = Layout;
+const { Item } = Menu;
 
 class LayoutComponent extends Component {
   render() {
@@ -20,35 +15,23 @@ class LayoutComponent extends Component {
         <Router>
           <Sider>
             <Menu className={styles['ant-menu-vertical']} theme="dark">
-              <Menu.Item className={styles['ant-menu-item']} key="api">
-                <Link to="/api">api</Link>
-              </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="chart">
-                <Link to="/chart">chart</Link>
-              </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="filters">
-                <Link to="/filters">filters</Link>
-              </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="form">
-                <Link to="/form">form</Link>
-              </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="mock">
-                <Link to="/mock">mock</Link>
-              </Menu.Item>
-              <Menu.Item className={styles['ant-menu-item']} key="modal">
-                <Link to="/modal">modal</Link>
-              </Menu.Item>
+              {constantRoutes.map(r => {
+                return (
+                  <Item className={styles['ant-menu-item']} key={r.path}>
+                    <Link to={`/${r.path}`}>{r.path}</Link>
+                  </Item>
+                );
+              })}
             </Menu>
           </Sider>
           <Content className={styles['ant-layout-content']}>
-            <Switch>
-              <Route path="/api" component={ApiComponent} exact />
-              <Route path="/chart" component={ChartComponent} exact />
-              <Route path="/filters" component={FiltersComponent} exact />
-              <Route path="/form" component={FormComponent} exact />
-              <Route path="/mock" component={MockComponent} exact />
-              <Route path="/modal" component={ModalComponent} exact />
-            </Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                {constantRoutes.map(r => {
+                  return <Route key={r.path} path={`/${r.path}`} component={r.component} exact />;
+                })}
+              </Switch>
+            </Suspense>
           </Content>
         </Router>
       </Layout>

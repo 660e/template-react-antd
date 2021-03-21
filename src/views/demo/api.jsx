@@ -13,6 +13,10 @@ class ApiComponent extends Component {
     demoApi.getRandomuserData(1).then(response => this.setState({ results: response.data.results }));
   }
 
+  componentWillUnmount() {
+    this.setState = () => false;
+  }
+
   render() {
     return <pre>{JSON.stringify(this.state.results, null, 2)}</pre>;
   }

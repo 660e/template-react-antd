@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { Button, Form, Input } from 'antd';
 
+const { Item } = Form;
+
 const rules = {
   phone: [
     { required: true, message: 'required' },
@@ -28,23 +30,23 @@ class FormComponent extends Component {
   render() {
     return (
       <Form style={{ width: 500 }} labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} onFinish={this.onFinish}>
-        <Form.Item label="Phone" name="phone" rules={rules.phone} hasFeedback>
+        <Item label="Phone" name="phone" rules={rules.phone} hasFeedback>
           <Input />
-        </Form.Item>
-        <Form.Item label="Password" name="password" rules={rules.password} hasFeedback>
+        </Item>
+        <Item label="Password" name="password" rules={rules.password} hasFeedback>
           <Input />
-        </Form.Item>
-        <Form.Item label="Confirm Password" name="confirmPassword" rules={rules.confirmPassword} dependencies={['password']} hasFeedback>
+        </Item>
+        <Item label="Confirm Password" name="confirmPassword" rules={rules.confirmPassword} dependencies={['password']} hasFeedback>
           <Input />
-        </Form.Item>
-        <Form.Item label="Tag" name="tag">
+        </Item>
+        <Item label="Tag" name="tag">
           <Input />
-        </Form.Item>
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        </Item>
+        <Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
-        </Form.Item>
+        </Item>
       </Form>
     );
   }
