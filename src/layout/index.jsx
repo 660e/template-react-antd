@@ -1,5 +1,5 @@
 import { Component, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link, withRouter } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import { constantRoutes } from '../router';
 
@@ -14,11 +14,11 @@ class LayoutComponent extends Component {
       <Layout className={styles['ant-layout']}>
         <Router>
           <Sider>
-            <Menu className={styles['ant-menu-vertical']} theme="dark">
+            <Menu className={styles['ant-menu-vertical']} defaultSelectedKeys={this.props.location.pathname} theme="dark">
               {constantRoutes.map(r => {
                 return (
                   <Item className={styles['ant-menu-item']} key={r.path}>
-                    <Link to={`/${r.path}`}>{r.path}</Link>
+                    <Link to={r.path}>{r.name}</Link>
                   </Item>
                 );
               })}
@@ -28,7 +28,7 @@ class LayoutComponent extends Component {
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
                 {constantRoutes.map(r => {
-                  return <Route key={r.path} path={`/${r.path}`} component={r.component} exact />;
+                  return <Route key={r.path} path={r.path} component={r.component} exact />;
                 })}
               </Switch>
             </Suspense>
@@ -39,4 +39,4 @@ class LayoutComponent extends Component {
   }
 }
 
-export default LayoutComponent;
+export default withRouter(LayoutComponent);

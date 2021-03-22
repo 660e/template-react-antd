@@ -8,6 +8,7 @@ class FiltersComponent extends Component {
       n: 1234567890
     };
   }
+
   render() {
     return (
       <h1>
