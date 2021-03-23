@@ -2,32 +2,32 @@ import { lazy } from 'react';
 
 const routes = [
   {
-    path: '/api',
+    path: '/demo/api',
     name: 'api',
     component: lazy(() => import('../../views/demo/api.jsx'))
   },
   {
-    path: '/chart',
+    path: '/demo/chart',
     name: 'chart',
     component: lazy(() => import('../../views/demo/chart.jsx'))
   },
   {
-    path: '/filters',
+    path: '/demo/filters',
     name: 'filters',
     component: lazy(() => import('../../views/demo/filters.jsx'))
   },
   {
-    path: '/form',
+    path: '/demo/form',
     name: 'form',
     component: lazy(() => import('../../views/demo/form.jsx'))
   },
   {
-    path: '/mock',
+    path: '/demo/mock',
     name: 'mock',
     component: lazy(() => import('../../views/demo/mock.jsx'))
   },
   {
-    path: '/modal',
+    path: '/demo/modal',
     name: 'modal',
     component: lazy(() => import('../../views/demo/modal.jsx'))
   }
