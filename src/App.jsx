@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import LoginComponent from './login';
 import LayoutComponent from './layout';
+import LoginComponent from './login';
 
 class App extends Component {
   loggedIn = () => {
