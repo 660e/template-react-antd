@@ -1,0 +1,20 @@
+.ant-layout {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  .ant-form {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    .ant-form-item {
+      margin-bottom: 20px;
+      &:last-child {
+        margin: 0;
+      }
+      .ant-btn {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,12 +1,18 @@
 .ant-layout {
   height: 100vh;
-}
-.ant-menu-vertical li.ant-menu-item,
-.ant-menu-vertical li.ant-menu-item:not(:last-child) {
-  margin: 0;
-  text-align: right;
-}
-.ant-layout-content {
-  padding: 20px;
-  overflow-y: auto;
+  .ant-layout-header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .ant-menu-vertical li.ant-menu-item,
+  .ant-menu-vertical li.ant-menu-item:not(:last-child) {
+    margin: 0;
+    text-align: right;
+  }
+  .ant-layout-content {
+    padding: 20px;
+    overflow-y: auto;
+  }
 }
