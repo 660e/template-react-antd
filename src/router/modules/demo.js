@@ -30,6 +30,11 @@ const routes = [
     path: '/demo/modal',
     name: 'modal',
     component: lazy(() => import('../../views/demo/modal.jsx'))
+  },
+  {
+    path: '/demo/redux',
+    name: 'redux',
+    component: lazy(() => import('../../views/demo/redux.jsx'))
   }
 ];
 
