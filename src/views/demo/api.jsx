@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import demoApi from '../../api/demo.js';
+import demoApi from '@/api/demo.js';
 
 class ApiComponent extends Component {
   constructor() {

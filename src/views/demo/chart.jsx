@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { echarts } from '../../utils/echarts.js';
+import { echarts } from '@/utils/echarts.js';
 
 const option = {
   tooltip: {

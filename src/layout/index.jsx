@@ -2,7 +2,7 @@ import { Component, Suspense } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
 import { Layout, Menu, Button } from 'antd';
 import { PoweroffOutlined } from '@ant-design/icons';
-import { constantRoutes } from '../router';
+import { constantRoutes } from '@/router';
 
 import styles from './index.module.scss';
 

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { toThousandFilter } from '../../utils/filters.js';
+import { toThousandFilter } from '@/utils/filters.js';
 
 class FiltersComponent extends Component {
   constructor() {

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Button, Space } from 'antd';
-import demoApi from '../../api/demo.js';
+import demoApi from '@/api/demo.js';
 
 class MockComponent extends Component {
   constructor() {
