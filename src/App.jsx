@@ -1,5 +1,5 @@
 // import { Component } from 'react';
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import LayoutComponent from './layout';
 import LoginComponent from './login';
@@ -12,10 +12,12 @@ import LoginComponent from './login';
 //     return (
 //       <Router>
 //         <Route path="/" exact>
-//           <Redirect to={this.loggedIn() ? '/demo' : '/login'} />
+//           <Redirect to={this.loggedIn() ? '/' : '/login'} />
 //         </Route>
-//         <Route path="/demo" component={LayoutComponent}></Route>
-//         <Route path="/login" component={LoginComponent}></Route>
+//         <Switch>
+//           <Route path="/login" component={LoginComponent}></Route>
+//           <Route path="/" component={LayoutComponent}></Route>
+//         </Switch>
 //       </Router>
 //     );
 //   }
@@ -28,10 +30,12 @@ function App() {
   return (
     <Router>
       <Route path="/" exact>
-        <Redirect to={loggedIn() ? '/demo' : '/login'} />
+        <Redirect to={loggedIn() ? '/' : '/login'} />
       </Route>
-      <Route path="/demo" component={LayoutComponent}></Route>
-      <Route path="/login" component={LoginComponent}></Route>
+      <Switch>
+        <Route path="/login" component={LoginComponent}></Route>
+        <Route path="/" component={LayoutComponent}></Route>
+      </Switch>
     </Router>
   );
 }
