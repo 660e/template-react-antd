@@ -1,12 +1,16 @@
-import { RouterProvider } from 'react-router-dom';
 import { StyleProvider } from '@ant-design/cssinjs';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import router from './router';
+import AppLayout from './layouts';
 
 export default function App() {
   return (
     <StyleProvider hashPriority="high">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<AppLayout />} />
+        </Routes>
+      </BrowserRouter>
     </StyleProvider>
   );
 }

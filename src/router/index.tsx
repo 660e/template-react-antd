@@ -1,12 +1,3 @@
-import { createBrowserRouter } from 'react-router-dom';
+import examples from './modules/examples';
 
-import AppLayout from '../layouts';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <AppLayout />
-  }
-]);
-
-export default router;
+export const routes = [...examples];

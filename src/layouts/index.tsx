@@ -1,7 +1,12 @@
+import { Route, Routes } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 
-const { Header, Sider } = Layout;
+import { routes } from '../router';
+
+const { Content, Header, Sider } = Layout;
+
+console.log(routes);
 
 const items: MenuProps['items'] = [
   { label: 'nav 1', key: 1 },
@@ -16,6 +21,13 @@ export default function AppLayout() {
         <Sider theme="light">
           <Menu items={items} className="text-right" />
         </Sider>
+        <Layout>
+          <Content>
+            <Routes>
+              <Route path="/examples/axios" element={<div>/examples/axios</div>} />
+            </Routes>
+          </Content>
+        </Layout>
       </Layout>
     </Layout>
   );
