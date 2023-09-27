@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #999;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
 body {
-  font-family: consolas, monaco, microsoft yahei, pingfang sc;
+  font-family:
+    consolas,
+    monaco,
+    microsoft yahei,
+    pingfang sc;
 }
 pre {
   margin: 0;

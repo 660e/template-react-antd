@@ -24,7 +24,7 @@ export default function AppLayout() {
           <Menu onClick={({ key }) => navigate(key)} items={items} className="h-full text-right" />
         </Sider>
         <Layout>
-          <Content>
+          <Content className="overflow-auto">
             <Routes>
               {routes.map(r => {
                 return <Route key={r.path} path={r.path} element={r.element} />;
