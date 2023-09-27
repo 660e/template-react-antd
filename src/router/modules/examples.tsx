@@ -1,4 +1,5 @@
 import ExampleAxios from '../../pages/examples/axios';
+import ExampleModal from '../../pages/examples/modal';
 
 export default [
   {
@@ -9,6 +10,6 @@ export default [
   {
     path: '/examples/modal',
     label: 'modal',
-    element: <div>modal</div>
+    element: <ExampleModal />
   }
 ];
