@@ -1,12 +1,37 @@
 import { useState } from 'react';
 import { Button, Input } from 'antd';
+import { examplesApi } from '../../apis/examples';
+
+import ExampleModalConfirm from './modal-confirm';
+
+function uid(): string {
+  return new Date().getTime().toString();
+}
 
 export default function ExampleModal() {
-  const [seed, setSeed] = useState(new Date().getTime());
-  const [modal, setModal] = useState(false);
+  const [seed, setSeed] = useState(uid());
+  const [open, setOpen] = useState(false);
+  const [pre, setPre] = useState();
+  const [confirmLoading, setConfirmLoading] = useState(false);
 
   const random = () => {
-    setSeed(new Date().getTime());
+    setSeed(uid());
+  };
+
+  const ok = () => {
+    setConfirmLoading(true);
+    examplesApi
+      .randomuser({ seed })
+      .then(r => {
+        setPre(r.data);
+        cancel();
+      })
+      .finally(() => {
+        setConfirmLoading(false);
+      });
+  };
+  const cancel = () => {
+    setOpen(false);
   };
 
   return (
@@ -18,10 +43,12 @@ export default function ExampleModal() {
         <Button onClick={random} type="primary">
           random
         </Button>
-        <Button onClick={() => setModal(modal)} type="primary">
+        <Button onClick={() => setOpen(!open)} type="primary">
           get
         </Button>
       </div>
+      <pre>{JSON.stringify(pre, null, 2)}</pre>
+      <ExampleModalConfirm title="Confirm" open={open} seed={seed} onOk={ok} onCancel={cancel} confirmLoading={confirmLoading} closeIcon={false} />
     </div>
   );
 }
