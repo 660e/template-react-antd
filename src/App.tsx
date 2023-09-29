@@ -1,7 +1,7 @@
 import { StyleProvider } from '@ant-design/cssinjs';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import AppLayout from './layouts';
+import AppLayout from '@/layouts';
 
 export default function App() {
   return (

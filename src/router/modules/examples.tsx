@@ -1,5 +1,5 @@
-import ExampleAxios from '../../pages/examples/axios';
-import ExampleModal from '../../pages/examples/modal';
+import ExampleAxios from '@/pages/examples/axios';
+import ExampleModal from '@/pages/examples/modal';
 
 export default [
   {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Input } from 'antd';
-import { examplesApi } from '../../apis/examples';
+import { examplesApi } from '@/apis/examples';
 
 import ExampleModalConfirm from './modal-confirm';
 

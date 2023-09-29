@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { examplesApi } from '../../apis/examples';
-import { apiController } from '../../utils/api';
+import { examplesApi } from '@/apis/examples';
+import { apiController } from '@/utils/api';
 
 import { Button } from 'antd';
 

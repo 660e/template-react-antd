@@ -1,4 +1,4 @@
-import { api } from '../utils/api';
+import { api } from '@/utils/api';
 
 const examplesApi = {
   randomuser({ results, page, seed }: { results?: number; page?: number; seed?: string } = {}) {

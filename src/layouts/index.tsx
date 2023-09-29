@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 
-import { routes } from '../router';
+import { routes } from '@/router';
 
 const { Content, Header, Sider } = Layout;
 
